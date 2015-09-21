@@ -1,0 +1,22 @@
+<ion-header-bar class="bar-positive">
+    <div class="buttons">
+        <button class="button button-icon icon ion-minus-round" ng-click="data.showDelete = !data.showDelete;"></button>
+        <h1 class="title">Todos os itens</h1>
+        <button class="button" ui-sref="createTodo">Novo</button>
+    </div>
+</ion-header-bar>
+
+<ion-content>
+    <ion-list show-delete="data.showDelete">
+        <ion-item ng-repeat="item in items | orderBy: '-createdAt'"
+                  item="item"
+                  href="#/todo/edit/{{item.objectId}}/{{item.content}}">
+            {{item.content}}
+            <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer-bar align-title="right" class="bar-positive">
+    <button class="button" ng-click="signOut()">Sair</button>	
+</ion-footer-bar>

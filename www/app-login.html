@@ -1,0 +1,39 @@
+<ion-header-bar class="bar-positive">
+	<h1 class="title">Todo</h1>
+</ion-header-bar>
+
+<ion-content>
+	<form name="autenticacaoForm" novalidate="" ng-submit="signIn(autenticacaoForm)">
+		<div class="list list-inset">
+			<label class="item item-input item-stacked-label">
+			    <span class="input-label">Usuário</span>
+		    	<input type="text" ng-model="Model.usuario">
+		  	</label>
+		  	<label class="item item-input item-stacked-label">
+			    <span class="input-label">Senha</span>
+			    <input type="password" ng-model="Model.senha">
+	  		</label>
+			<button class="button button-block button-positive" type="submit">Login</button>
+		</div>
+	</form>
+	<div class="text-center mute">ou entre com</div>
+	<div class="row">
+		<div class="col">
+			<button class="button button-block button-assertive">
+				<i class="ion-social-google"></i> Google
+			</button>
+		</div>
+		<div class="col">
+			<button class="button button-block button-positive">
+				<i class="ion-social-facebook"></i> Facebook
+			</button>
+		</div>
+	</div>
+</ion-content>
+
+<ion-footer-bar align-title="left" class="bar-positive">
+	<div class="button-bar">
+	  <a class="button" href="#/recuperarsenha">Recuperar senha</a>
+	  <a class="button" href="#/novo">Cadastrar</a>
+	</div>
+</ion-footer-bar>
