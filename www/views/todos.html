@@ -7,7 +7,7 @@
 </ion-header-bar>
 
 <ion-content>
-    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    <ion-refresher on-refresh="getItens()"></ion-refresher>
     <ion-list show-delete="data.showDelete">
         <ion-item ng-repeat="item in items | orderBy: '-createdAt'"
                   item="item"

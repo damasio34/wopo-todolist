@@ -56,24 +56,19 @@
 		
 	});
 	
-	controllers.controller('TodoListController', function($scope, $state, TodoService, LoginService) {
+	controllers.controller('TodoListController', function($scope, $state, $ionicLoading, TodoService, LoginService) {
 			
 		var self = this;
-		this.getItens = function(callack) {		
+		
+		$scope.getItens = function() {	
 			TodoService.getAll().success(function(data) {
 				$scope.items = data.results;
-				if (callack) callack();
+			}).finally(function() {
+				$scope.$broadcast('scroll.refreshComplete')
 			});
 		};
 		
-		this.getItens();		
-				
-		$scope.doRefresh = function() {
-			self.getItens(function() {
-				//Stop the ion-refresher from spinning
-				$scope.$broadcast('scroll.refreshComplete');
-			});
-		};		
+		$scope.getItens();	
 	
 		$scope.onItemDelete = function(item) {
 			TodoService.excluir(item.objectId);
