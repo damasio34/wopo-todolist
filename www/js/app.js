@@ -14,15 +14,25 @@ angular.module('wopoTodolist', [
 })
 
 .config(function($httpProvider) {
+    // $httpProvider.interceptors.push('RequestInterceptor');
+    // $httpProvider.interceptors.push('ResultInterceptor');
     $httpProvider.interceptors.push(function($rootScope) {
         return {
-            request: function(config) {
+            request: function(config){
                 $rootScope.$broadcast('loading:show')
                 return config
             },
+            // requestError: function(rejection){
+            //     $rootScope.$broadcast('loading:show');
+            //     return rejection;
+            // },
             response: function(response) {
-                $rootScope.$broadcast('loading:hide')
+                $rootScope.$broadcast('loading:hide');
                 return response
+            },
+            responseError: function(response){
+                $rootScope.$broadcast('loading:hide');
+                return response;
             }
         }
     })
