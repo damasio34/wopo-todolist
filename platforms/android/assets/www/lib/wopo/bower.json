@@ -1,0 +1,17 @@
+{
+  "name": "wopo",
+  "version": "0.1.5",
+  "description": "Framework com serviços básicos",
+  "main": "src/wopo.js",
+  "authors": [
+    "Darlan Damasio <darlan@damasio34.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.6"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ]
+}
