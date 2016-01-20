@@ -6,6 +6,7 @@
 		var _service = function() {};
 
 		var base = RestServiceBase;
+        console.log(RestServiceBase);
 		base.setMainRoute('Todo');
 		// Herdando a implementação de RestServiceBase
 		_service.prototype = base;

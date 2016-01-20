@@ -6,7 +6,8 @@
     "platform.js": "platform#~1.3.0"
   },
   "resolutions": {
-    "angular": "~1.4.6"
+    "angular": "~1.4.6",
+    "wopo": "master"
   },
   "dependencies": {
     "wopo": "master"
