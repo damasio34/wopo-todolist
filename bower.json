@@ -10,6 +10,7 @@
     "wopo": "master"
   },
   "dependencies": {
-    "wopo": "master"
+    "wopo": "master",
+    "ionic-material-design-lite": "~0.5.5"
   }
 }
